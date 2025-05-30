@@ -1,0 +1,44 @@
+<?php
+// require_once '../config/DateBase.php';
+// require_once 'Fornecedor.php';
+// if ($_POST) {
+//     $db = (new Database())->getConnection();
+//     $Fornecedor = new fornecedor($db);
+//     $Fornecedor->nome = $_POST['nome'];
+//     $Fornecedor->cnpj = $_POST['cnpj'];
+//     $Fornecedor->telefone = $_POST['telefone'];
+//     $Fornecedor->email = $_POST['email'];
+//     $Fornecedor->endereco = $_POST['endereco'];
+//     if ($Fornecedor->criar()) {
+//         header("Location: listar.php");
+//     }
+// }
+?>
+
+<link rel="stylesheet" href="/Estilo/estilo.css">
+<header>
+    <h1>Adoção Animal</h1>
+   </header>
+    <nav>
+     <ul>
+        <li><a href="../Home.php">Home</a></li>
+        <li><a href="#">Realizar Doação</a></li>
+        <li><a href="ConsultarEve\Consultar.php">Consultar evento</a></li>
+        <li><a href="imagens.html">Sobre</a></li>
+        <li><a href="Disque\Acolhimento.php">Disque acolhimento</a></li>
+        
+     </ul>
+   </nav>
+
+
+
+<h2>Cadastrar Doacao</h2>
+
+<form method="POST">
+    Tipo: <input type="text" name="nome" required><br>
+    Nome: <input type="text" step="0.01" name="email" required><br>
+    Quantidade: <input type="text" name="senha" required><br>
+
+    <br>
+    <button type="submit">Salvar</button>
+</form>

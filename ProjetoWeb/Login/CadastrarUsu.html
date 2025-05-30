@@ -1,0 +1,42 @@
+<?php
+// require_once '../config/DateBase.php';
+// require_once 'Fornecedor.php';
+// if ($_POST) {
+//     $db = (new Database())->getConnection();
+//     $Fornecedor = new fornecedor($db);
+//     $Fornecedor->nome = $_POST['nome'];
+//     $Fornecedor->cnpj = $_POST['cnpj'];
+//     $Fornecedor->telefone = $_POST['telefone'];
+//     $Fornecedor->email = $_POST['email'];
+//     $Fornecedor->endereco = $_POST['endereco'];
+//     if ($Fornecedor->criar()) {
+//         header("Location: listar.php");
+//     }
+// }
+?>
+
+<link rel="stylesheet" href="../estilo/home.css">
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button"><a href="../index.php">Home</a></button>
+    
+    <button class="btn btn-sm btn-outline-secondary" type="button"><a href="listar.php">Listar Fornecedores</a></button>
+  </form>
+</nav>
+
+
+
+ <!-- <link rel="stylesheet" href="../estilo/home.css">
+<a href="../index.php">Início</a> -->
+<!-- <a href="listar.php">Listar Fornecedores</a> -->
+<h2>Cadastrar Fornecedor</h2>
+
+<form method="POST">
+    Nome: <input type="text" name="nome" required><br>
+    Email: <input type="text" step="0.01" name="email" required><br>
+    Senha: <input type="text" name="senha" required><br>
+    ConfirmarSenha: <input type="email" name="confirmSen" required><br>
+
+    <br>
+    <button type="submit">Salvar</button>
+</form>
