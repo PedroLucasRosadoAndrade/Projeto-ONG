@@ -1,40 +1,60 @@
-<?php
-// require_once '../config/DateBase.php';
-// require_once 'Fornecedor.php';
-// if ($_POST) {
-//     $db = (new Database())->getConnection();
-//     $Fornecedor = new fornecedor($db);
-//     $Fornecedor->nome = $_POST['nome'];
-//     $Fornecedor->cnpj = $_POST['cnpj'];
-//     $Fornecedor->telefone = $_POST['telefone'];
-//     $Fornecedor->email = $_POST['email'];
-//     $Fornecedor->endereco = $_POST['endereco'];
-//     if ($Fornecedor->criar()) {
-//         header("Location: listar.php");
-//     }
-// }
-?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Estilo/formulario2.css" />
+    <title>Login| Amigos de Francisco</title>
+  </head>
 
-<link rel="stylesheet" href="../estilo/home.css">
-<nav class="navbar bg-body-tertiary">
-  <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button"><a href="../index.php">Home</a></button>
-    
-    <button class="btn btn-sm btn-outline-secondary" type="button"><a href="listar.php">Listar Fornecedores</a></button>
-  </form>
-</nav>
+  <body>
+    <header class="header">
+      <nav>
+         <div class="nav__logo">
+          <a href="#">
+            <img src="../assets/logo-color.png" alt="logo" class="logo-color" />
+          </a>
+        </div>
+
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#"><a href="../index.html">Início</a></a></li>
+          <li><a href="#"><a href="../Login/CadastroUsu.html">Cadastre-se</a></a></li>
+        </ul>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </nav>
 
 
+      <div class="header__container">
+        <div class="header__image reveal"></div>
+        <div class="header__image"></div>
+        <div class="header__content">
+            <div class="form-container">
+        <div class="formulario">
+        <h1>Login</h1> <br>
 
- <!-- <link rel="stylesheet" href="../estilo/home.css">
-<a href="../index.php">Início</a> -->
-<!-- <a href="listar.php">Listar Fornecedores</a> -->
-<h2>LOgin</h2>
+        <form method="POST">
+      <div class="form-group">
+        <label for="email"><h2>Email:</h2></label>
+        <input type="text" id="email" name="email" required>
+      </div> <br>
+      
+      <div class="form-group">
+        <label for="senha"><h2>Senha:</h2></label>
+        <input type="password" id="senha" name="senha" required>
+      </div> <br>
+      
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    </div>
+  </div>
 
-<form method="POST">
-    Email: <input type="text" step="0.01" name="email" required><br>
-    Senha: <input type="text" name="senha" required><br>
-
-    <br>
-    <button type="submit">Salvar</button>
-</form>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
