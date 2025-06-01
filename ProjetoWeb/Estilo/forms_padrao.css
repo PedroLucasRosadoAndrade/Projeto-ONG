@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
 
 :root {
-  --orange: lab(72.84% 29.9 67.2 / 0.8);
+  --white: #ffffff;
   --max-width: 1200px;
 }
 
@@ -17,14 +17,14 @@
   border: none;
   font-size: 1rem;
   color: var(--white);
+  background-color: var(--primary-color);
   border-radius: 5px;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: lab(72.84% 29.9 67.2 / 0.8);
-  color: rgb(255, 255, 255);
+  background-color: rgba(255, 154, 48, 0.8);
 }
 
 img {
@@ -90,10 +90,6 @@ nav {
   display: none;
 }
 
-.nav__links a:hover {
-  color: white;
-}
-
 .nav__links.open {
   display: flex;
 }
@@ -102,6 +98,10 @@ nav {
   white-space: nowrap;
   font-weight: 500;
   color: var(--text-dark);
+}
+
+.nav__links a:hover {
+  color: var(--white);
 }
 
 .nav__menu__btn {
@@ -114,20 +114,19 @@ nav {
 }
 
 .header__container {
-  display: flex;
-  margin: 0 auto;
+  display: grid;
 }
 
-  .header__image {
+.header__image {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  height: 100%;
   min-height: max(75vh, 500px);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
   border-bottom-left-radius: 8rem;
 }
-
 
 .header__image::after {
   position: absolute;
@@ -142,7 +141,8 @@ nav {
 }
 
 .header__image.reveal {
-  background-image: url("../assets/animais.png");
+  background-image: url("../assets/gatinho.png");
+  background-position: center;
 }
 
 .header__image.reveal::after {
@@ -151,24 +151,28 @@ nav {
   animation: scroll-left 0.5s linear forwards;
 }
 
- .header__content {
-    text-align: left;
-    padding-top: 10rem;
-    grid-column: 2/3;
+@keyframes scroll-right {
+  0% {
+    width: 0;
   }
+  100% {
+    width: 100%;
+  }
+}
 
-  .header__content h2 {
-    color: #171716;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 4rem;
+@keyframes scroll-left {
+  0% {
+    width: 100%;
   }
+  100% {
+    width: 0;
+  }
+}
 
-    .header__content h3 {
-    font-size: 2rem;
-    color: #d67310;
-    line-height: normal;
-  }
+.header__content {
+  text-align: center;
+  padding: 3rem 1rem;
+}
 
 .header__content h1 {
   font-size: 4rem;
@@ -181,17 +185,9 @@ nav {
   margin-bottom: 2rem;
   color: var(--text-dark);
 }
-
-
-@media (width > 540px) {
   .header__image {
     min-height: max(75vh, 550px);
   }
-
-  .banner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
   nav {
     padding: 2rem 1rem;
@@ -237,26 +233,37 @@ nav {
     grid-area: 1/3/2/5;
   }
 
+  .header__content {
+    text-align: left;
+    padding-top: 10rem;
+    grid-column: 2/3;
+  }
 
-  form{
-    font-family: Arial, sans-serif;
-    margin: 15px;
-    margin: 0 auto;
-}
+  .header__content h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
 
-input{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
+  .header__content h2 {
+    color: #171716;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 4rem;
+  }
 
-label{
-    display: flex;
-    align-items: center;
-}
+    .header__content h3 {
+    font-size: 2rem;
+    color: #d67310;
+    line-height: normal;
+  }
 
+@media (width > 1024px) {
+  .nav__links {
+    padding: 0.75rem 4rem;
+    gap: 4rem;
+  }
 
-.form-container {
+  .form-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -271,7 +278,17 @@ label{
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-  .nav__links {
-    padding: 0.75rem 4rem;
-    gap: 4rem;
+.form-group {
+  margin-bottom: 1rem;
+}
+
+@media (width > 768px) {
+  .form-container {
+    padding: 4rem;
   }
+  
+  .formulario {
+    max-width: 500px;
+  }
+}
+}
