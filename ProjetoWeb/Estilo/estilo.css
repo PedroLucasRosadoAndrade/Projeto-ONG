@@ -1,35 +1,48 @@
-nav ul {
-    list-style-type: none;
-    background: rgb(55, 61, 181);
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+h5 {
+    position: fixed;
+    top: 5px;
+    right: 0;
+    margin: 10px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 16px;
-    display: block;
-}
+table {
+      margin: 50px auto; /* centraliza na tela */
+      border-collapse: collapse;
+      width: 80%;
+      text-align: center;
+    }
 
-nav li {
-    float: left;
-}
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+    }
 
-nav a:hover {
-    background-color: white;
-    color: rgb(55, 61, 181);
-}
+    th {
+      background-color: #f2f2f2;
+    }
 
-.card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-}
-aside {
-    float: left;
-    width: 25%;
-    padding-left: 20px;
+    caption {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
 
-}
+     .botao-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .botao-relatorio {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .botao-relatorio:hover {
+      background-color: #0056b3;
+    }
+
+    
