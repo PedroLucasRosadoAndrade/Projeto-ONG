@@ -1,75 +1,83 @@
-<?php
-// require_once '../config/DateBase.php';
-// require_once 'Fornecedor.php';
-// if ($_POST) {
-//     $db = (new Database())->getConnection();
-//     $Fornecedor = new fornecedor($db);
-//     $Fornecedor->nome = $_POST['nome'];
-//     $Fornecedor->cnpj = $_POST['cnpj'];
-//     $Fornecedor->telefone = $_POST['telefone'];
-//     $Fornecedor->email = $_POST['email'];
-//     $Fornecedor->endereco = $_POST['endereco'];
-//     if ($Fornecedor->criar()) {
-//         header("Location: listar.php");
-//     }
-// }
-?>
-
-<link rel="stylesheet" href="/Estilo/estilo.css">
-<header>
-    <h1>Adoção Animal</h1>
-   </header>
-    <nav>
-     <ul>
-        <li><a href="Home.php">Home</a></li>
-        <li><a href="Doacao\Doacao.php">Realizar Doação</a></li>
-        <li><a href="#">Consultar evento</a></li>
-        <li><a href="imagens.html">Sobre</a></li>
-        <li><a href="Disque\Acolhimento.php">Disque acolhimento</a></li>
-        
-     </ul>
-   </nav>
-<nav class="navbar bg-body-tertiary">
-  <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button"><a href="../index.php">Home</a></button>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     
-    <button class="btn btn-sm btn-outline-secondary" type="button"><a href="listar.php">Listar</a></button>
-  </form>
-</nav>
+    <link rel="stylesheet" href="../Estilo/evento.css" />
+    <script src="../ConsultarEve/script.js" defer></script>
+    <title>Cadastro | Amigos de Francisco</title>
+  </head>
+
+  <body>
+    <header class="header">
+
+      <nav>
+         <div class="nav__logo">
+          <a href="#">
+            <img src="../assets/logo-color.png" alt="logo" class="logo-color" />
+          </a>
+        </div>
+
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#"><a href="../index.html">Início</a></a></li>
+          <li><a href="#"><a href="../Disque/Acolhimento.html">Acolhimento</a></a></li>
+          <li><a href="#"><a href="../Doacao/Doacao.html">Cadastrar doação</a></a></li>
+          <li>Sair</li>
+        </ul>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </nav>
 
 
-<nav class="navbar bg-body-tertiary">
-  <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-success me-2" type="button"><a href="../index.php">Home</a></button>
-    
-    <button class="btn btn-sm btn-outline-secondary" type="button"><a href="listar.php">Listar Fornecedores</a></button>
-  </form>
-</nav>
-
-
-
- <!-- <link rel="stylesheet" href="../estilo/home.css">
-<a href="../index.php">Início</a> -->
-<!-- <a href="listar.php">Listar Fornecedores</a> -->
-<h2>Cadastrar Fornecedor</h2>
-
-<form method="POST">
-    Adoção de animais<input type="text" name="nome" required><br>
-    Adoção de animais<input type="text" name="nome" required><br>
-    Adoção de animais<input type="text" name="nome" required><br>
-    
-
-</form>
-
-<aside>
-                 <article class="card">
-                    <h3>Post mais visto</h3>
-                    <a href="desenvolvimento-web/estrutura-principal-pagina-web.html">
-                        <img src="imagens/Tecnologia em analise e desenvolvimento de sistemas tudo sobre a graduacao.jpg" 
-                             alt="Capa do post">
-                    </a>
-                    <p>
-                        Artigo sobre HTML 
-                    </p>
-
-            </aside>
+        <div class="header__content">
+          <div class="wrapper">
+      <div class="calendar-container">
+        <header>
+          <p class="current-date"></p>
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded">chevron_right</span>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Dom</li>
+            <li>Seg</li>
+            <li>Ter</li>
+            <li>Qua</li>
+            <li>Qui</li>
+            <li>Sex</li>
+            <li>Sáb</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+      
+      <div class="notes-container">
+        <div class="notes-header">
+          <h3>Anotações</h3>
+          <button id="add-note" class="material-symbols-rounded">add</button>
+        </div>
+        <div class="notes-content">
+          <div class="selected-date"></div>
+          <ul class="notes-list"></ul>
+          <div class="note-form hidden">
+            <textarea id="note-text" placeholder="Digite sua anotação..."></textarea>
+            <div class="note-actions">
+              <button id="save-note">Salvar</button>
+              <button id="cancel-note">Cancelar</button>
+              <button id="delete-note" class="danger">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+         
+  </div>
+  </body>
+</html>

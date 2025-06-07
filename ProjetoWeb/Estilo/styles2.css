@@ -3,7 +3,7 @@
 :root {
   --white: #ffffff;
   --max-width: 1200px;
-  --primary-color: rgba(255, 154, 48, 0.8); 
+  --primary-color: #ff9a30cc; 
 }
 
 * {
