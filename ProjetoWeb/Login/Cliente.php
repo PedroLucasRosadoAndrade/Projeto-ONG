@@ -1,0 +1,64 @@
+<?php
+class Funcionario
+{
+    private $conn;
+    private $table = "Funcionario";
+    public $id_fun;
+    public $nome_fun;
+    public $email_fun;
+    public $senha_fun;
+    public $comfirmaSenha_fun;
+
+    
+
+    public function __construct($db)
+    {
+        $this->conn = $db;
+    }
+    public function listar()
+    {
+        $query = "SELECT * FROM " . $this->table;
+        $resultado = $this->conn->prepare($query);
+        $resultado->execute();
+        return $resultado;
+    }
+    public function criar()
+    {
+        $query = "INSERT INTO " . $this->table . " (nome_usu, email_usu, senha_usu, comfirmaSenha_usu) VALUES(:nome, :email, :senha, :confirmarSen)";
+        $resultado = $this->conn->prepare($query);
+        $resultado->bindParam(':nome', $this->nome_fun);
+        $resultado->bindParam(':email', $this->email_fun);
+        $resultado->bindParam(':senha', $this->senha_fun);
+        $resultado->bindParam(':confirmarSen', $this->comfirmaSenha_fun);
+
+        return $resultado->execute();
+    }
+    public function editar()
+    {
+        $query = "UPDATE " . $this->table . " SET nome = :nome, cpf = :cpf, telefone = :telefone, email = :email, endereco = :endereco WHERE id = :id";
+        $resultado = $this->conn->prepare($query);
+        $resultado->bindParam(':nome', $this->nome_fun);
+        $resultado->bindParam(':email', $this->email_fun);
+        $resultado->bindParam(':senha', $this->senha_fun);
+        $resultado->bindParam(':confirmarSen', $this->comfirmaSenha_fun);
+        $resultado->bindParam(':id', $this->id_fun);
+        
+        return $resultado->execute();
+    }
+    public function deletar()
+    {
+        $query = "DELETE FROM " . $this->table . " WHERE id_fun = :id";
+        $resultado = $this->conn->prepare($query);
+        $resultado->bindParam(':id', $this->id_fun);
+        return $resultado->execute();
+    }
+    public function buscarPorId()
+    {
+        $query = "SELECT * FROM " . $this->table . " WHERE id_fun = :id LIMIT 1";
+        $resultado = $this->conn->prepare($query);
+        $resultado->bindParam(':id', $this->id_fun);
+        $resultado->execute();
+        return $resultado->fetch(PDO::FETCH_ASSOC);
+    }
+}
+?>
