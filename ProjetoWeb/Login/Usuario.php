@@ -1,5 +1,5 @@
 <?php
-class Usuario
+class Usuar
 {
     private $conn;
     private $table = "Usuario";

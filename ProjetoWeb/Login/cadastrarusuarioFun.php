@@ -1,7 +1,6 @@
 <?php
-
-require_once '/Config/DataBase.php';
-require_once '/Login/Funcionario.php';
+require_once '../Config/DataBase.php';
+require_once '../Login/Funcionario.php';
 if ($_POST) {
     $db = (new Database())->getConnection();
     $Funcionario = new funcionario($db);
@@ -10,7 +9,8 @@ if ($_POST) {
     $Funcionario->senha_fun = $_POST['senha'];
     $Funcionario->comfirmaSenha_fun = $_POST['confirmarSen'];
     if ($Funcionario->criar()) {
-        header("Location: listar.php");
+        echo "<script>window.location.href = '../HomeFun.html';</script>";
+    exit;
     }
 }
 ?>

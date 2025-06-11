@@ -24,7 +24,7 @@ class Funcionario
     }
     public function criar()
     {
-        $query = "INSERT INTO " . $this->table . " (nome_usu, email_usu, senha_usu, comfirmaSenha_usu) VALUES(:nome, :email, :senha, :confirmarSen)";
+        $query = "INSERT INTO " . $this->table . " (nome_fun, email_fun, senha_fun, comfirmaSenha_fun) VALUES(:nome, :email, :senha, :confirmarSen)";
         $resultado = $this->conn->prepare($query);
         $resultado->bindParam(':nome', $this->nome_fun);
         $resultado->bindParam(':email', $this->email_fun);
@@ -35,7 +35,7 @@ class Funcionario
     }
     public function editar()
     {
-        $query = "UPDATE " . $this->table . " SET nome = :nome, cpf = :cpf, telefone = :telefone, email = :email, endereco = :endereco WHERE id = :id";
+        $query = "UPDATE " . $this->table . " SET nome_fun = :nome, email_fun = :email, senha_fun = :senha, comfirmaSenha_fun = :confirmarSen WHERE id_fun = :id";
         $resultado = $this->conn->prepare($query);
         $resultado->bindParam(':nome', $this->nome_fun);
         $resultado->bindParam(':email', $this->email_fun);

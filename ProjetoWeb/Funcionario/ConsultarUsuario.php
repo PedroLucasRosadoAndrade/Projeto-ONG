@@ -1,5 +1,14 @@
+<?php
+require_once '../Config/DataBase.php';
+require_once '../Login/Cliente.php';
+$db = (new Database())->getConnection();
+$Usuario = new usuario($db);
+$resultado = $Usuario->listar();
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -48,43 +57,19 @@
                 <th>Confirma Senha</th>
             </tr>
         </thead>
-        <tbody>
+        <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
             <tr>
-                <td>1</td>
-                <td>Ana Silva</td>
-                <td>ana@email.com</td>
-                <td>123456</td>
-                <td>123456</td>
+                <td><?= $row['id_usu'] ?></td>
+                <td><?= $row['nome_usu'] ?></td>
+                <td><?= $row['email_usu'] ?></td>
+                <td><?= $row['senha_usu'] ?></td>
+                <td><?= $row['comfirmaSenha_usu'] ?></td>
+                <td>
+                    <a href="AlterarCli.php?idCli=<?= $row['id_usu'] ?>">Editar</a>
+                    <a href="ExcluirCli.php"onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
+                </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>João Lima</td>
-                <td>joao@email.com</td>
-                <td>senha123</td>
-                <td>senha123</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Marcos Souza</td>
-                <td>marcos@email.com</td>
-                <td>abc123</td>
-                <td>abc123</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Lucia Rocha</td>
-                <td>lucia@email.com</td>
-                <td>lucia2024</td>
-                <td>lucia2024</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Carlos Mendes</td>
-                <td>carlos@email.com</td>
-                <td>car123</td>
-                <td>car123</td>
-            </tr>
-        </tbody>
+        <?php endwhile; ?>
     </table>
 
     <div class="botao-container">
