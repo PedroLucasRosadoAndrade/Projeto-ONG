@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionário/Amigos de Francisco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="#" class="nav-button active">Home</a>
+            <a href="#" class="nav-button">Consultar Usuários</a>
+            <a href="#" class="nav-button">Consultar Doações</a>
+            <a href="#" class="nav-button">Consultar Acolhimentos</a>
+        </div>
+        <div class="user-info">
+            Funcionário: Roberval Rogerio Clayton
+        </div>
+    </header>
 
+    <div class="main-layout">
+        <aside class="sidebar-left">
+            <div class="welcome-section">
+                <h3>Bem-vindo, Roberval!</h3>
+            </div>
+            <div class="action-buttons-list">
+                <a href="#" class="action-button">Buscar Acolhimento por Cidade ou Tipo</a>
+                <a href="#" class="action-button">Ver Animais Disponíveis para Adoção</a>
+                <a href="#" class="action-button">Estatísticas Gerais</a>
+                <a href="#" class="action-button">Editar Informações de Acolhimento</a>
+                <a href="#" class="action-button">Meu Perfil</a>
+                <a href="#" class="action-button">Sair</a>
+            </div>
+        </aside>
+
+        
+            <div class="decorative-image-container">
+                <img src="imagem1.jpg.png" alt="Pet" class="sidebar-decorative-image">
+            </div>
+        </aside>
+    </div> 
+
+</body>
+</html>
