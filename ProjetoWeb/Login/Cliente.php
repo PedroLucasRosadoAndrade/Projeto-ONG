@@ -61,5 +61,20 @@ class Usuario
         $resultado->execute();
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function verificarLogin($email, $senha) {
+    $sql = "SELECT * FROM Usuario WHERE email_usu = :email AND senha_usu = :senha";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+        $this->id_usu = $dados['idCli'];
+        return true;
+    }
+    return false;
+}
 }
 ?>

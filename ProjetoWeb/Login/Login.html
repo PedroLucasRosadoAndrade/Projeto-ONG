@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../Estilo/login.css" />
-    <title>Login| Amigos de Francisco</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <nav>
-         <div class="nav__logo">
-          <a href="#">
-            <img src="../assets/logo-color.png" alt="logo" class="logo-color" />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../Estilo/login.css" />
+  <title>Login| Amigos de Francisco</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <div class="nav__logo">
+        <a href="#">
+          <img src="../assets/logo-color.png" alt="logo" class="logo-color" />
+        </a>
+      </div>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#"><a href="../index.html">Início</a></a></li>
+        <li><a href="#"><a href="../Login/CadastrarUsu.html">Cadastre-se</a></a></li>
+      </ul>
+      <div class="nav__menu__btn" id="menu-btn">
+        <span><i class="ri-menu-line"></i></span>
+      </div>
+    </nav>
+
+
+    <div class="header__container">
+      <div class="header__image reveal"></div>
+      <div class="header__image"></div>
+      <div class="header__content">
+        <div class="form-container">
+          <div class="formulario">
+            <h1>Login</h1> <br>
+
+            <form method="POST" action="verificaLogin.php">
+              <div class="form-group">
+                <label for="email">
+                  <h2>Email:</h2>
+                </label>
+                <input type="text" id="email" name="email" required>
+              </div> <br>
+
+              <div class="form-group">
+                <label for="senha">
+                  <h2>Senha:</h2>
+                </label>
+                <input type="password" id="senha" name="senha" required>
+              </div> <br>
+              <p>Esqueceu sua senha? <a href="../Login/RedefinicaoSen.html">Crie uma nova senha</a></p>
+
+              <button type="submit" name="login_usuario">Entrar como Usuário</button>
+              <button type="submit" name="login_funcionario">Entrar como Funcionário</button>
+            </form>
+          </div>
         </div>
 
-        <ul class="nav__links" id="nav-links">
-          <li><a href="#"><a href="../index.html">Início</a></a></li>
-          <li><a href="#"><a href="../Login/CadastrarUsu.html">Cadastre-se</a></a></li>
-        </ul>
-        <div class="nav__menu__btn" id="menu-btn">
-          <span><i class="ri-menu-line"></i></span>
-        </div>
-      </nav>
+</body>
 
-
-      <div class="header__container">
-        <div class="header__image reveal"></div>
-        <div class="header__image"></div>
-        <div class="header__content">
-            <div class="form-container">
-        <div class="formulario">
-        <h1>Login</h1> <br>
-
-        <form method="POST">
-      <div class="form-group">
-        <label for="email"><h2>Email:</h2></label>
-        <input type="text" id="email" name="email" required>
-      </div> <br>
-      
-      <div class="form-group">
-        <label for="senha"><h2>Senha:</h2></label>
-        <input type="password" id="senha" name="senha" required>
-      </div> <br>
-      <p>Esqueceu sua senha? <a href="../Login/RedefinicaoSen.html">Crie uma nova senha</a></p>
-      
-      <button type="submit" class="btn">Entrar</button> 
-    </form>
-    </div>
-  </div>
-
-  </body>
 </html>
