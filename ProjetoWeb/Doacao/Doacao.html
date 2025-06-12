@@ -34,9 +34,10 @@
             <div class="formulario">
               
 
-              <form method="POST">
+              <form method="POST" action="CadastrarDoa.php">
                 <div class="form-group">
                   <h1>Doação</h1> <br>
+                  <input type="hidden" name="idDo" value="<?= htmlspecialchars($_GET['idDoa'] ?? $_POST['idDoa'] ?? '') ?>">
                   <label for="tipo"><h2>Tipo:</h2></label>
                   <input type="text" name="tipo" required><br>
 
@@ -47,7 +48,7 @@
                   <input type="text" name="quantidade" required><br>
                 </div> <br>
               
-                <button type="submit" class="btn">Entrar</button>
+                <button type="submit" class="btn">Salvar</button>
               </form>
             </div>
           </div>

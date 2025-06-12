@@ -1,3 +1,11 @@
+<?php
+require_once '../Config/DataBase.php';
+require_once '../Doacao/DoacaoClas.php';
+$db = (new Database())->getConnection();
+$Doacao = new doacao($db);
+$resultado = $Doacao->listar();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +21,7 @@
     <header class="header">
         <nav>
             <ul class="nav__links" id="nav-links">
-                <li><a href="../HomeFun.html">Home</a></li>
+                <li><a href="../HomeCli.html">Home</a></li>
                 <!-- <li><a href="../ProjetoWeb/Funcionario/ConsultarUsuario.html">Consultar Usuarios</a></li> -->
                 <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li>
                 <!-- <li><a href="imagens.html">Sobre</a></li> -->
@@ -47,38 +55,18 @@
         <th>Quantidade</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Comida</td>
-        <td>Ração</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Alimento</td>
-        <td>Ração KG</td>
-        <td>120 KG</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Limpeza</td>
-        <td>Shampo</td>
-        <td>75</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Dinheiro</td>
-        <td>Pix</td>
-        <td>$30</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Limpeza</td>
-        <td>Escova</td>
-        <td>10</td>
-      </tr>
-    </tbody>
+    <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
+            <tr>
+                <td><?= $row['id_doa'] ?></td>
+                <td><?= $row['tipo_doa'] ?></td>
+                <td><?= $row['nomeProd_doa'] ?></td>
+                <td><?= $row['quantidade_doa'] ?></td>
+                <td>
+                    <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a>
+                    <a href="ExcluirCli.php"onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
+                </td>
+            </tr>
+        <?php endwhile; ?>
   </table>
 
     <div class="botao-container">
