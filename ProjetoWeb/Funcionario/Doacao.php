@@ -70,7 +70,7 @@ $resultado = $Doacao->listar();
   </table>
 
     <div class="botao-container">
-        <a class="botao-relatorio" href="../Funcionario/RelatorioDoac.html">Gerar Relatório</a>
+        <a class="botao-relatorio" href="../Doacao/RelatorioDoac.php">Gerar Relatório</a>
     </div>
 </body>
 

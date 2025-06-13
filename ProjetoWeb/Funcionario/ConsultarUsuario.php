@@ -73,7 +73,7 @@ $resultado = $Usuario->listar();
     </table>
 
     <div class="botao-container">
-        <a class="botao-relatorio" href="../Funcionario/RelatorioUsua.html">Gerar Relatório</a>
+        <a class="botao-relatorio" href="../Funcionario/RelatorioUsua.php">Gerar Relatório</a>
     </div>
 </body>
 
