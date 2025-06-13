@@ -9,7 +9,7 @@ class Usuario
     public $senha_usu;
     public $comfirmaSenha_usu;
 
-    
+
 
     public function __construct($db)
     {
@@ -42,7 +42,7 @@ class Usuario
         $resultado->bindParam(':senha', $this->senha_usu);
         $resultado->bindParam(':confirmarSen', $this->comfirmaSenha_usu);
         $resultado->bindParam(':idCli', $this->id_usu);
-        
+
         return $resultado->execute();
     }
     public function deletar()
@@ -51,7 +51,7 @@ class Usuario
         $resultado = $this->conn->prepare($query);
         $resultado->bindParam(':idCli', $this->id_usu);
         return $resultado->execute();
-        
+
     }
     public function buscarPorId()
     {
@@ -62,19 +62,29 @@ class Usuario
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function verificarLogin($email, $senha) {
-    $sql = "SELECT * FROM Usuario WHERE email_usu = :email AND senha_usu = :senha";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
-    $stmt->execute();
+    public function verificarLogin($email, $senha)
+    {
+        $sql = "SELECT * FROM Usuario WHERE email_usu = :email AND senha_usu = :senha";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->execute();
 
-    if ($stmt->rowCount() > 0) {
-        $dados = $stmt->fetch(PDO::FETCH_ASSOC);
-        $this->id_usu = $dados['idCli'];
-        return true;
+        if ($stmt->rowCount() > 0) {
+            $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+            $this->id_usu = $dados['idCli'];
+            return true;
+        }
+        return false;
     }
-    return false;
-}
+    public function editarSenha()
+    {
+        $query = "UPDATE " . $this->table . " SET senha_usu = :senha, comfirmaSenha_usu = :confirmar WHERE id_usu = :idCli";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':senha', $this->senha_usu);
+        $stmt->bindParam(':confirmar', $this->comfirmaSenha_usu);
+        $stmt->bindParam(':idCli', $this->id_usu);
+        return $stmt->execute();
+    }
 }
 ?>
