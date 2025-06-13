@@ -1,0 +1,48 @@
+h5 {
+    position: fixed;
+    top: 5px;
+    right: 0;
+    margin: 10px;
+}
+
+table {
+      margin: 50px auto; /* centraliza na tela */
+      border-collapse: collapse;
+      width: 80%;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    caption {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+     .botao-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .botao-relatorio {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .botao-relatorio:hover {
+      background-color: #0056b3;
+    }
+
+    

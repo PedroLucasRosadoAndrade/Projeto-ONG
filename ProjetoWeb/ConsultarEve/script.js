@@ -28,7 +28,6 @@ const renderCalendar = () => {
         lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
     let liTag = "";
 
-    // Dias do mês anterior
     for (let i = firstDayofMonth; i > 0; i--) {
         const dayNumber = lastDateofLastMonth - i + 1;
         const prevMonth = currMonth - 1 < 0 ? 11 : currMonth - 1;
@@ -38,7 +37,6 @@ const renderCalendar = () => {
         liTag += `<li class="inactive ${hasEvent}" data-date="${dateStr}">${dayNumber}</li>`;
     }
 
-    // Dias do mês atual
     for (let i = 1; i <= lastDateofMonth; i++) {
         const dateStr = `${currYear}-${currMonth + 1}-${i}`;
         const isToday = i === date.getDate() && currMonth === new Date().getMonth() 
@@ -47,7 +45,6 @@ const renderCalendar = () => {
         liTag += `<li class="${isToday} ${hasEvent}" data-date="${dateStr}">${i}</li>`;
     }
 
-    // Dias do próximo mês
     for (let i = lastDayofMonth; i < 6; i++) {
         const dayNumber = i - lastDayofMonth + 1;
         const nextMonth = currMonth + 1 > 11 ? 0 : currMonth + 1;
@@ -60,7 +57,6 @@ const renderCalendar = () => {
     currentDate.innerText = `${months[currMonth]} ${currYear}`;
     daysTag.innerHTML = liTag;
 
-    // Adiciona evento de clique para cada dia
     document.querySelectorAll('.days li').forEach(day => {
         day.addEventListener('click', () => {
             const dateStr = day.dataset.date;
@@ -70,7 +66,7 @@ const renderCalendar = () => {
         });
     });
     
-    // Mostra as anotações do dia atual ao carregar
+
     if (!selectedDate) {
         const today = new Date();
         const todayStr = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
@@ -79,12 +75,10 @@ const renderCalendar = () => {
 };
 
 const selectDate = (dateStr) => {
-    // Remove a seleção anterior
     document.querySelectorAll('.days li').forEach(day => {
         day.classList.remove('selected');
     });
     
-    // Adiciona seleção ao novo dia
     const dayElement = document.querySelector(`.days li[data-date="${dateStr}"]`);
     if (dayElement) {
         dayElement.classList.add('selected');
@@ -117,7 +111,6 @@ const showNotesForDate = (dateStr) => {
     }
 };
 
-// Função auxiliar para formatar a data
 const formatDateDisplay = (dateStr) => {
     const [year, month, day] = dateStr.split('-');
     return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
@@ -141,6 +134,7 @@ const hideNoteForm = () => {
 
 const saveNote = () => {
     const text = noteText.value.trim();
+     const tipoEvento = document.getElementById('event-type').value;
     if (!text || !selectedDate) return;
     
     if (!notes[selectedDate]) {
@@ -156,11 +150,39 @@ const saveNote = () => {
             date: selectedDate
         });
     }
+
+    if (!text || !selectedDate || !tipoEvento) {
+        alert('Preencha todos os campos');
+        return;
+    }
+
+    fetch('evento.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            tipo: tipoEvento,
+            data: selectedDate
+        })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        noteText.value = '';
+        hideNoteForm();
+        showNotesForDate(selectedDate);
+        renderCalendar();
+    })
+    .catch(error => {
+        console.error('Erro ao salvar:', error);
+        alert('Erro ao salvar no banco.');
+    });
     
     localStorage.setItem('calendar-notes', JSON.stringify(notes));
     hideNoteForm();
     showNotesForDate(selectedDate);
-    renderCalendar(); // Atualiza os indicadores de evento
+    renderCalendar(); 
 };
 
 const deleteNote = () => {
@@ -174,7 +196,7 @@ const deleteNote = () => {
     localStorage.setItem('calendar-notes', JSON.stringify(notes));
     hideNoteForm();
     showNotesForDate(selectedDate);
-    renderCalendar(); // Atualiza os indicadores de evento
+    renderCalendar(); 
 };
 
 const editNote = (dateStr, index) => {
@@ -186,7 +208,6 @@ const editNote = (dateStr, index) => {
 };
 
 
-// Event Listeners
 addNoteBtn.addEventListener('click', showNoteForm);
 saveNoteBtn.addEventListener('click', saveNote);
 cancelNoteBtn.addEventListener('click', hideNoteForm);
@@ -205,9 +226,7 @@ prevNextIcon.forEach(icon => {
     });
 });
 
-// Inicialização
 renderCalendar();
-// Seleciona o dia atual por padrão
 const today = new Date();
 const todayStr = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
 selectDate(todayStr);
