@@ -4,7 +4,7 @@ require_once '../Config/DataBase.php';
 require_once '../Disque/DisqueClas.php';
 if ($_POST) {
     $db = (new Database())->getConnection();
-    $Denuncia = new denuncia($db);
+    $Denuncia = new Denuncia($db);
     $Denuncia->descricao_den = $_POST['desricao'];
     $Denuncia->tipoAnimal_den = $_POST['tipo'];
     $Denuncia->cidade_den = $_POST['cidade'];
