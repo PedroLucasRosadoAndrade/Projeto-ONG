@@ -10,7 +10,7 @@ if ($_POST) {
     $Usuario->senha_usu = $_POST['senha'];
     $Usuario->comfirmaSenha_usu = $_POST['confirmarSen'];
     if ($Usuario->criar()) {
-        echo "<script>window.location.href = '../HomeCli.html';</script>";
+        echo "<script>window.location.href = '../Login/Login.html';</script>";
     exit;
     }
 }
