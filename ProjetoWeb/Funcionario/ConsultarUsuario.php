@@ -50,11 +50,10 @@ $resultado = $Usuario->listar();
         <caption>Lista de Cadastros</caption>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Numero</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Senha</th>
-                <th>Confirma Senha</th>
+                <th>Deletar</th>
             </tr>
         </thead>
         <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
@@ -62,10 +61,7 @@ $resultado = $Usuario->listar();
                 <td><?= $row['id_usu'] ?></td>
                 <td><?= $row['nome_usu'] ?></td>
                 <td><?= $row['email_usu'] ?></td>
-                <td><?= $row['senha_usu'] ?></td>
-                <td><?= $row['comfirmaSenha_usu'] ?></td>
                 <td>
-                    <a href="AlterarCli.php?idCli=<?= $row['id_usu'] ?>">Editar</a>
                     <a href="ExcluirCli.php"onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
                 </td>
             </tr>

@@ -53,6 +53,7 @@ $resultado = $Doacao->listar();
         <th>Tipo</th>
         <th>Nome do Produto</th>
         <th>Quantidade</th>
+        <th>Atualizações</th>
       </tr>
     </thead>
     <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
@@ -63,7 +64,7 @@ $resultado = $Doacao->listar();
                 <td><?= $row['quantidade_doa'] ?></td>
                 <td>
                     <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a>
-                    <a href="ExcluirCli.php"onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
+                    <a href="../Doacao/ExcluirDoa.php?idDoa=<?= $row['id_doa'] ?>" onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
                 </td>
             </tr>
         <?php endwhile; ?>
