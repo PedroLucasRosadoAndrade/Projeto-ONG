@@ -13,7 +13,7 @@ $tipo = $data['tipo'];
 $dataEvento = $data['data'];
 
 session_start();
-$id_fun_fk = $_SESSION['id_fun'] ?? 1;
+$id_fun_fk = $_SESSION['id_fun'] ?? 1; //Responsável de pôr no banco, tem q ver isso aqui
 
 $sql = "INSERT INTO Evento (tipo_eve, data_eve, id_fun_fk) VALUES (?, ?, ?)";
 
