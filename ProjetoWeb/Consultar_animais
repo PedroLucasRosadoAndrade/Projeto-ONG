@@ -1,0 +1,93 @@
+<?php
+require_once '../Config/DataBase.php';
+require_once '../Disque/DisqueClas.php';
+$db = (new Database())->getConnection();
+$Denuncia = new Denuncia($db);
+$resultado = $Denuncia->listar();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Acolhimentos - Amigos de Francisco</title>
+    <link rel="stylesheet" href="consultar_acolhimento.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="../HomeFun.html">Home</a></li>
+                <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li>
+                <li><a href="Acolhimento.php" class="active">Consultar Acolhimentos</a></li>
+            </ul>
+            <div class="user-info">
+                Funcionário: Roberval Rogerio Clayton
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <span><i class="ri-menu-line"></i></span>
+            </div>
+        </nav>
+
+        
+    </header>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="main.js"></script>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('open');
+        });
+    </script>
+
+    <table>
+        <caption>Gereciamento de Acolhimentos</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Tipo de Animal</th>
+                <th>Cidade</th>
+                <th>Situação</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($resultado && $resultado->rowCount() > 0) {
+                while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($row['id_den']) ?></td>
+                        <td><?= htmlspecialchars($row['descricao_den']) ?></td>
+                        <td><?= htmlspecialchars($row['tipoAnimal_den']) ?></td>
+                        <td><?= htmlspecialchars($row['cidade_den']) ?></td>
+                        <td><?= htmlspecialchars($row['situacao_den']) ?></td>
+                        <td><?= htmlspecialchars($row['endereco_den']) ?></td>
+                        
+                        </td> 
+                    </tr>
+                <?php endwhile;
+            } else {
+
+                echo "<tr><td colspan='6' class='no-data'>Nenhum acolhimento encontrado.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+    <div class="botao-container">
+        <a class="botao-relatorio" href="../Disque/RelatorioAcolh.php">Gerar Relatório</a>
+    </div>
+
+    <footer>
+        <p>&copy; <?php echo date('Y'); ?> Sistema de Acolhimento Animal</p>
+    </footer>
+
+</body>
+</html>
