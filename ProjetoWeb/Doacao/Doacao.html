@@ -18,7 +18,7 @@
 
         <ul class="nav__links" id="nav-links">
           <li><a href= "../index.html">Home</a></li>
-          <li><a href="../ConsultarEve/Consultar.html">Consultar evento</a></li>
+          <!-- <li><a href="../ConsultarEve/Consultar.html">Consultar evento</a></li> -->
           <li><a href="../Disque/Acolhimento.html">Disque acolhimento</a></li>
         </ul>
         <div class="nav__menu__btn" id="menu-btn">
@@ -34,20 +34,21 @@
             <div class="formulario">
               
 
-              <form method="POST">
+              <form method="POST" action="CadastrarDoa.php">
                 <div class="form-group">
                   <h1>Doação</h1> <br>
+                  <input type="hidden" name="idDo" value="<?= htmlspecialchars($_GET['idDoa'] ?? $_POST['idDoa'] ?? '') ?>">
                   <label for="tipo"><h2>Tipo:</h2></label>
                   <input type="text" name="tipo" required><br>
 
-                  <label for="nome"><h2>Nome:</h2></label>
-                  <input type="text" step="0.01" name="nome" required><br>
+                  <label for="nomePro"><h2>Nome:</h2></label>
+                  <input type="text" step="0.01" name="nomePro" required><br>
 
-                  <label for="quantidade"><h2>Quantidade:</h2></label>
-                  <input type="text" name="quantidade" required><br>
+                  <label for="quantiPro"><h2>Quantidade:</h2></label>
+                  <input type="text" name="quantiPro" required><br>
                 </div> <br>
               
-                <button type="submit" class="btn">Entrar</button>
+                <button type="submit" class="btn">Salvar</button>
               </form>
             </div>
           </div>

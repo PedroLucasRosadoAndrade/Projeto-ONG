@@ -52,6 +52,7 @@ class Usuario
         $resultado->bindParam(':idCli', $this->id_usu);
         return $resultado->execute();
         
+
     }
     public function buscarPorId()
     {
