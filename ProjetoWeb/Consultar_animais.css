@@ -1,0 +1,228 @@
+/* Observação a imagem pode ser trocada, euu coloquei porque achei bonito*/
+/*tentei manter algumas partes, pore pode sfrer modificações*/
+:root {
+    --primary-orange: #f7931e;
+    --primary-orange-dark: #cc7b18;
+    --dark-brown: #4A2B1D;
+    --light-brown: #8D6B5A;
+    --accent-green: #28a745;
+    --danger-red: #dc3545;
+    --bg-light: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-base: rgba(0, 0, 0, 0.1);
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: transparent;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    background-image: url('img6.jpg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.header {
+    width: 100%;
+    background-color: transparent;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-orange);
+    padding: 15px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px var(--shadow-base);
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 95%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    color: var(--text-light);
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav__links li a {
+    background-color: transparent;
+    border: none;
+    color: var(--text-light);
+    padding: 8px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+}
+
+.nav__links li a:hover, .nav__links li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: none;
+    box-shadow: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-left: 20px;
+    white-space: nowrap;
+    text-shadow: none;
+}
+
+.nav__menu__btn {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: var(--text-light);
+    position: relative;
+    z-index: 200;
+    transition: none;
+}
+
+/* principal conteúdo */
+.header__container {
+    text-align: center;
+    background-color: transparent;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.header__content p {
+    color: var(--dark-brown);
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.logo-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 1000px; 
+    height: auto;
+}
+
+/* Estilo da tabela */
+table {
+    width: 95%;
+    max-width: 900px;
+    border-collapse: collapse;
+    margin: 30px auto;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-base);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+caption {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: none;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+th {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    font-weight: bold;
+    text-shadow: none;
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-light);
+}
+
+tr:not(:first-child):hover {
+    background-color: #f0f0f0;
+    transform: none;
+    box-shadow: none;
+    transition: none;
+}
+
+.no-data {
+    text-align: center;
+    font-style: italic;
+    color: var(--light-brown);
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+/* botão de relatório */
+.botao-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.botao-relatorio {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--primary-orange);
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-base);
+    font-size: 1em;
+    cursor: pointer;
+    letter-spacing: normal;
+    text-shadow: none;
+    border: none;
+}
+
+.botao-relatorio:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-orange-dark);
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    padding: 5px 3px;
+    background-color: var(--dark-brown);
+    color: var(--text-light);
+    text-align: center;
+    margin-top: auto;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    box-shadow: none;
+}
