@@ -5,6 +5,7 @@ body {
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 10px;
+      background-color: #fefefe;
     }
 
     h1 {
@@ -12,7 +13,7 @@ body {
       margin-bottom: 30px;
     }
 
-    .cadastro {
+    .produto {
       background-color: #f9f9f9;
       border: 1px solid #ddd;
       padding: 15px;
@@ -20,7 +21,11 @@ body {
       border-radius: 5px;
     }
 
-    .cadastro strong {
+    .produto p {
+      margin: 5px 0;
+    }
+
+    .produto strong {
       display: inline-block;
       width: 150px;
     }

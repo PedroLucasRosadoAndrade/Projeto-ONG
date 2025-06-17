@@ -60,3 +60,6 @@ quantidade_doa varchar(50),
 id_usu_fk int,
 foreign key (id_usu_fk) references Usuario (id_usu)
 );
+
+alter TABLE login ADD nome_usu VARCHAR(50);
+ALTER TABLE Usuario MODIFY id_den_fk INT NULL;

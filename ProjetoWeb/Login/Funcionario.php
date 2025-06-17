@@ -9,7 +9,7 @@ class Funcionario
     public $senha_fun;
     public $comfirmaSenha_fun;
 
-    
+
 
     public function __construct($db)
     {
@@ -42,7 +42,7 @@ class Funcionario
         $resultado->bindParam(':senha', $this->senha_fun);
         $resultado->bindParam(':confirmarSen', $this->comfirmaSenha_fun);
         $resultado->bindParam(':id', $this->id_fun);
-        
+
         return $resultado->execute();
     }
     public function deletar()
@@ -60,20 +60,20 @@ class Funcionario
         $resultado->execute();
         return $resultado->fetch(PDO::FETCH_ASSOC);
     }
+    public function verificarLogin($email, $senha)
+    {
+        $sql = "SELECT * FROM Funcionario WHERE email_fun = :email AND senha_fun = :senha";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha);
+        $stmt->execute();
 
-    public function verificarLogin($email, $senha) {
-    $sql = "SELECT * FROM Funcionario WHERE email_fun = :email AND senha_fun = :senha";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
-    $stmt->execute();
-
-    if ($stmt->rowCount() > 0) {
-        $dados = $stmt->fetch(PDO::FETCH_ASSOC);
-        $this->id_fun = $dados['id_fun'];
-        return true;
+        if ($stmt->rowCount() > 0) {
+            $dados = $stmt->fetch(PDO::FETCH_ASSOC);
+            $this->id_fun = $dados['id_fun'];
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 }
 ?>

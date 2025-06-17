@@ -9,8 +9,6 @@ class Usuario
     public $senha_usu;
     public $comfirmaSenha_usu;
 
-
-
     public function __construct($db)
     {
         $this->conn = $db;
@@ -42,7 +40,6 @@ class Usuario
         $resultado->bindParam(':senha', $this->senha_usu);
         $resultado->bindParam(':confirmarSen', $this->comfirmaSenha_usu);
         $resultado->bindParam(':idCli', $this->id_usu);
-
         return $resultado->execute();
     }
     public function deletar()
@@ -51,7 +48,6 @@ class Usuario
         $resultado = $this->conn->prepare($query);
         $resultado->bindParam(':idCli', $this->id_usu);
         return $resultado->execute();
-
     }
     public function buscarPorId()
     {
@@ -86,5 +82,6 @@ class Usuario
         $stmt->bindParam(':idCli', $this->id_usu);
         return $stmt->execute();
     }
+
 }
 ?>

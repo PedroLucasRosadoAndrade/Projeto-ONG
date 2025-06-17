@@ -82,6 +82,21 @@
           <h3>Anotações</h3>
           <button id="add-note" class="material-symbols-rounded">add</button>
         </div>
+        <div class="note-form hidden">
+    <select id="event-type" class="event-type">
+        <option value="">Selecione o tipo de evento</option>
+        <option value="Adoção">Evento de Adoção</option>
+        <option value="Vacinação">Campanha de Vacinação</option>
+        <option value="Doação">Evento de Doação</option>
+        <option value="Outro">Outro</option>
+    </select>
+    <textarea id="note-text" placeholder="Digite os detalhes do evento..."></textarea>
+    <div class="note-actions">
+        <button id="save-note">Salvar</button>
+        <button id="cancel-note">Cancelar</button>
+        <button id="delete-note" class="danger">Excluir</button>
+    </div>
+</div>
         <div class="notes-content">
           <div class="selected-date"></div>
           <ul class="notes-list"></ul>
