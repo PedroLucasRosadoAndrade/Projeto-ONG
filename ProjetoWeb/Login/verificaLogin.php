@@ -3,7 +3,7 @@ require_once '../Config/DataBase.php';
 require_once '../Login/Cliente.php';
 require_once '../Login/Funcionario.php';
 
-$db = (new Database())->getConnection();
+$db = (new Database())->getConnection();    
 
 // Verifica se o botão "Entrar como Usuário" foi clicado
 if (isset($_POST['login_usuario'])) {

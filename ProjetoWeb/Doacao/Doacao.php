@@ -12,7 +12,7 @@ $resultado = $Doacao->listar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="../Estilo/styles2.css">
     <link rel="stylesheet" href="../Estilo/estilo.css">
     <title>Document</title>
 </head>
@@ -39,39 +39,43 @@ $resultado = $Doacao->listar();
             <div class="header__content">
                 <p></p>
             </div>
+
+            <table >
+                <caption>Lista de Produtos</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <!-- <th>Atualizações</th> -->
+                    </tr>
+                </thead>
+                <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
+                    <tr>
+                        <td><?= $row['id_doa'] ?></td>
+                        <td><?= $row['tipo_doa'] ?></td>
+                        <td><?= $row['nomeProd_doa'] ?></td>
+                        <td><?= $row['quantidade_doa'] ?></td>
+                        <!-- <td>
+                    <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a>
+                    <a href="../Doacao/ExcluirDoa.php?idDoa=<?= $row['id_doa'] ?>" onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
+                </td> -->
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+
         </div>
     </header>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
 
-    <table>
-    <caption>Lista de Produtos</caption>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Tipo</th>
-        <th>Nome do Produto</th>
-        <th>Quantidade</th>
-        <th>Atualizações</th>
-      </tr>
-    </thead>
-    <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
-            <tr>
-                <td><?= $row['id_doa'] ?></td>
-                <td><?= $row['tipo_doa'] ?></td>
-                <td><?= $row['nomeProd_doa'] ?></td>
-                <td><?= $row['quantidade_doa'] ?></td>
-                <td>
-                    <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a>
-                    <a href="../Doacao/ExcluirDoa.php?idDoa=<?= $row['id_doa'] ?>" onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
-                </td>
-            </tr>
-        <?php endwhile; ?>
-  </table>
+
 
     <div class="botao-container">
         <a class="botao-relatorio" href="../Doacao/RelatorioDoac.php">Gerar Relatório</a>
+        <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
     </div>
 </body>
 

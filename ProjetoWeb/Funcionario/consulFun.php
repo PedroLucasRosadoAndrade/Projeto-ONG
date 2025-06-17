@@ -1,9 +1,9 @@
 <?php
 require_once '../Config/DataBase.php';
-require_once '../Login/Cliente.php';
+require_once '../Login/Funcionario.php';
 $db = (new Database())->getConnection();
-$Usuario = new usuario($db);
-$resultado = $Usuario->listar();
+$Funcionario = new Funcionario($db);
+$resultado = $Funcionario->listar();
 ?>
 
 
@@ -13,7 +13,7 @@ $resultado = $Usuario->listar();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Estilo/styles2.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="../Estilo/estilo.css">
     <title>Document</title>
 </head>
@@ -58,9 +58,9 @@ $resultado = $Usuario->listar();
         </thead>
         <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
             <tr>
-                <td><?= $row['id_usu'] ?></td>
-                <td><?= $row['nome_usu'] ?></td>
-                <td><?= $row['email_usu'] ?></td>
+                <td><?= $row['id_fun'] ?></td>
+                <td><?= $row['nome_fun'] ?></td>
+                <td><?= $row['email_fun'] ?></td>
                 <td>
                     <a href="ExcluirCli.php"onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
                 </td>
@@ -70,7 +70,6 @@ $resultado = $Usuario->listar();
 
     <div class="botao-container">
         <a class="botao-relatorio" href="../Funcionario/RelatorioUsua.php">Gerar Relatório</a>
-        <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
     </div>
 </body>
 

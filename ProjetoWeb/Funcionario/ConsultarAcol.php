@@ -13,7 +13,7 @@ $resultado = $Denuncia->listar();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="../Estilo/styles2.css">
   <link rel="stylesheet" href="../Estilo/estilo.css">
   <title>Document</title>
 </head>
@@ -76,6 +76,7 @@ $resultado = $Denuncia->listar();
 
   <div class="botao-container">
     <a class="botao-relatorio" href="../Disque/RelatorioAcolh.php">Gerar Relatório</a>
+    <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
   </div>
 </body>
 
