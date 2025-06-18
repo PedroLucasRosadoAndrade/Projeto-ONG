@@ -73,7 +73,7 @@ $resultado = $Denuncia->listar();
 
   <div class="botao-container">
     <a class="botao-relatorio" href="../Disque/RelatorioAcolh.php">Gerar Relatório</a>
-    <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
+    <a class="botao-relatorio" href="../ConsultarEve/Consultar.html">Voltar</a>
   </div>
       </div>
     </div>

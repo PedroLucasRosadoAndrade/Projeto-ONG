@@ -12,7 +12,6 @@ $resultado = $Doacao->listar();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Ícones e estilo -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
 
@@ -39,6 +38,8 @@ $resultado = $Doacao->listar();
     </nav>
   </header>
 
+    <div class="header__container"> 
+    <div class="header__content"> 
   <main class="main-content">
     <section class="tabela-section">
       <table>
@@ -65,10 +66,11 @@ $resultado = $Doacao->listar();
 
       <div class="botao-container">
         <a class="botao-relatorio" href="../Doacao/RelatorioDoac.php">Gerar Relatório</a>
-        <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
+        <a class="botao-relatorio" href="../ConsultarEve/Consultar.html">Voltar</a>
       </div>
     </section>
   </main>
-
+</div>
+</div>
 </body>
 </html>
