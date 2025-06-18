@@ -18,7 +18,7 @@ $resultado = $Denuncia->listar();
 </head>
 
 <body>
-  <header class="header">
+  
     <header class="header">
     <nav class="navbar">
       <div class="nav__logo">
@@ -42,7 +42,9 @@ $resultado = $Denuncia->listar();
       <div class="header__content">
          <script src="https://unpkg.com/scrollreveal"></script>
   <script src="main.js"></script>
-  <table>
+   <main class="main-content">
+    <section class="tabela-section">
+      <table>
     <caption>Lista de Acolhimentos</caption>
 
     <thead>
@@ -77,6 +79,9 @@ $resultado = $Denuncia->listar();
   </div>
       </div>
     </div>
+    </section>
+</main>
+  
   </header>
 
  

@@ -160,11 +160,7 @@ nav {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  justify-content: center;
-  min-height: 100vh;
+  padding-top: 80px; /* Espaço para a navbar */
 }
 
 table {
@@ -208,9 +204,9 @@ table {
     }
 
     .main-content {
-  padding: 100px 20px 40px; 
-  display: flex;
-  justify-content: center;
+   padding: 60px;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .tabela-section {
@@ -272,6 +268,17 @@ th {
 .main-content {
   display: flex;
   justify-content: center;
+}
+
+
+
+body > header > .header__container > .header__content > table {
+  margin: 20px 0;
+  width: 100%;
+}
+
+body > header > .header__container > .header__content > .botao-container {
+  margin-top: 20px;
 }
 
 
