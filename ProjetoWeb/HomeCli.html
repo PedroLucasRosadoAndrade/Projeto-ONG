@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../ProjetoWeb/Estilo/styles2.css">
-  <link rel="stylesheet" href="../ProjetoWeb/Estilo/estilo.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="../ProjetoWeb/Estilo/home.css" />
+    <script src="../ProjetoWeb/ConsultarEve/script.js" defer></script>
+    <title>Home | Amigos de Francisco</title>
+  </head>
 
-<body>
-    <nav>
+  <body>
+    <header class="header">
+
+      <nav>
+         <div class="nav__logo">
+          <a href="#">
+            <img src="../ProjetoWeb/assets/logo-color.png" alt="logo" class="logo-color" />
+          </a>
+        </div>
+
         <ul class="nav__links" id="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="../ProjetoWeb/Doacao/Doacao.html">Realizar Doação</a></li>
-            <li><a href="../ProjetoWeb/ConsultarEve/Consultar.html">Consultar evento</a></li>
-            <!-- <li><a href="imagens.html">Sobre</a></li> -->
-            <li><a href="../ProjetoWeb/Disque/Acolhimento.html">Disque acolhimento</a></li>
-
+          <li><a href="#"><a href="../ProjetoWeb/HomeCli.html">Home</a></a></li>
+        <li><a href="../ProjetoWeb/Doacao/Doacao.html">Realizar doação</a></li>
+        <li><a href="../ProjetoWeb/Disque/Acolhimento.html">Disque Acolhimento</a></li>
+        <li><a href="../ProjetoWeb/Login/sair.php">Sair</a></li>
         </ul>
-    </nav>
+        
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </nav>
 
-</body>
-<aside>
 
-    </article>
-    <!-- <article class="card">
-        <h3>Sugundo post</h3>   
-        <img src="imagens/images.jpg" alt="Método Scrum">
-        <p>imagem de como é as reuniões Scrum</p>
-
-    </article> -->
-</aside>
-
+        <div class="header__content">
+          
+          <div class="wrapper">
+      <div class="calendar-container">
+        <h3>Eventos</h3> <br>
+        <header>
+          <p class="current-date"></p>
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded">chevron_right</span>
+          </div>
+        </header>
+        <div class="calendar">
+          <ul class="weeks">
+            <li>Dom</li>
+            <li>Seg</li>
+            <li>Ter</li>
+            <li>Qua</li>
+            <li>Qui</li>
+            <li>Sex</li>
+            <li>Sáb</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+      
+      <div class="notes-container">
+        <div class="notes-header">
+          <h3>Anotações</h3>
+          <button id="add-note" class="material-symbols-rounded">add</button>
+        </div>
+        <div class="note-form hidden">
+</div>
+        <div class="notes-content">
+          <div class="selected-date"></div>
+          <ul class="notes-list"></ul>
+          <div class="note-form hidden">
+            <textarea id="note-text" placeholder="Digite sua anotação..."></textarea>
+            <div class="note-actions">
+              <button id="save-note">Salvar</button>
+              <button id="cancel-note">Cancelar</button>
+              <button id="delete-note" class="danger">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+         
+  </div>
+  </body>
 </html>
