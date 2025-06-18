@@ -33,7 +33,7 @@ $resultado = $Doacao->listar();
         <li><a href="../ConsultarEve/Consultar.html">Início</a></li>
         <li><a href="../Doacao/Doacao.php">Consultar Doações</a></li>
         <li><a href="../Funcionario/ConsultarAcol.php">Consultar Acolhimentos</a></li>
-        <li><a href="../Meuperfil_funcionario.php">Meu Perfil</a></li>
+        <!-- <li><a href="../Meuperfil_funcionario.php">Meu Perfil</a></li> -->
         <li><a href="../Login/sair.php">Sair</a></li>
       </ul>
     </nav>
