@@ -30,7 +30,7 @@ $resultado = $Doacao->listar();
         </a>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="../HomeFun.html">Início</a></li>
+        <li><a href="../ConsultarEve/Consultar.html">Início</a></li>
         <li><a href="../Doacao/Doacao.php">Consultar Doações</a></li>
         <li><a href="../Funcionario/ConsultarAcol.php">Consultar Acolhimentos</a></li>
         <li><a href="../Meuperfil_funcionario.php">Meu Perfil</a></li>

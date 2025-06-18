@@ -28,7 +28,7 @@ if (isset($_POST['login_funcionario'])) {
     $Funcionario = new Funcionario($db);
     if ($Funcionario->verificarLogin($email, $senha)) {
         // Login de funcionário bem-sucedido
-        header("Location: ../HomeFun.html");
+        header("Location: ../consultareve/consultar.html");
         exit;
     } else {
         echo "Funcionário ou senha inválidos!";
