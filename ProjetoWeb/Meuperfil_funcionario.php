@@ -1,11 +1,37 @@
 <?php
+// require_once '../ProjetoWeb/Config/DataBase.php';
+// require_once '../ProjetoWeb/Login/Funcionario.php';
+// $db = (new Database())->getConnection();
+// $Funcionario = new Funcionario($db);
+// // $resultado = $Usuario->listar();
+// $resultado = $Funcionario-> id_fun = 1;
+// $resultado = $Funcionario->buscarPorId();
+
 require_once '../ProjetoWeb/Config/DataBase.php';
 require_once '../ProjetoWeb/Login/Funcionario.php';
+
 $db = (new Database())->getConnection();
 $Funcionario = new Funcionario($db);
-// $resultado = $Usuario->listar();
-$resultado = $Funcionario-> id_fun = 1;
+
+// Defina um ID fixo ou dinâmico (ex: via sessão)
+$Funcionario->id_fun = 2;
+
+// Se houve POST, atualiza os dados
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $Funcionario->nome_fun = $_POST['nome'] ?? '';
+    $Funcionario->email_fun = $_POST['email'] ?? '';
+    $Funcionario->senha_fun = $_POST['senha'] ?? '';
+    $Funcionario->comfirmaSenha_fun = $_POST['confirmarSen'] ?? '';
+
+    if ($Funcionario->editar()) {
+        echo "<script>alert('Dados atualizados com sucesso!');</script>";
+    } else {
+        echo "<script>alert('Erro ao atualizar.');</script>";
+    }
+}
+
 $resultado = $Funcionario->buscarPorId();
+
 ?>
 
 
@@ -44,27 +70,28 @@ $resultado = $Funcionario->buscarPorId();
 
             <section class="profile-details card">
                 <h3>Informações Pessoais</h3>
-                
+
+                <form method="POST">
                     <div class="info-group">
                         <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome"  value="<?= $resultado['nome_fun']?>" readonly></input>
-                    </div>
-
-                     <div class="info-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" value="<?= $resultado['email_fun']?>" readonly>
+                        <input type="text" id="nome" name="nome" value="<?= $resultado['nome_fun'] ?>" readonly></input>
                     </div>
 
                     <div class="info-group">
-                        <label for="nome">Senha:</label>
-                        <input type="text" id="nome" value="<?= $resultado['senha_fun']?>" readonly>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" value="<?= $resultado['email_fun'] ?>" readonly>
                     </div>
 
-                   
+                    <div class="info-group">
+                        <label for="senha">Senha:</label>
+                        <input type="text" id="senha" name="senha" value="<?= $resultado['senha_fun'] ?>" readonly>
+                    </div>
+
+
 
                     <!-- <div class="info-group">
                         <label for="telefone">Telefone:</label>
-                        <input type="tel" id="telefone" value="<?= $resultado['nome_fun']?>" readonly>
+                        <input type="tel" id="telefone" value="<?= $resultado['nome_fun'] ?>" readonly>
                     </div> -->
 
                     <!-- <div class="info-group">
@@ -77,10 +104,13 @@ $resultado = $Funcionario->buscarPorId();
                         <input type="text" id="cargo" value="Funcionário" readonly>
                     </div> -->
 
-                <button class="edit-button" id="editProfileBtn">Editar Perfil</button>
-                <a class="edit-button" href="./HomeFun.html">Voltar</a>
-                <button class="save-button" id="saveProfileBtn" style="display: none;">Salvar Alterações</button>
-                <button class="cancel-button" id="cancelEditBtn" style="display: none;">Cancelar</button>
+                    <button type="button" class="edit-button" id="editProfileBtn">Editar Perfil</button>
+                    <a class="edit-button" href="./HomeFun.html">Voltar</a>
+                    <!-- <button class="save-button" id="saveProfileBtn" style="display: none;">Salvar Alterações</button>
+                      -->
+                    <button type="submit" class="save-button" id="saveProfileBtn" style="display: none;">Salvar Alterações</button>
+                    <button class="cancel-button" id="cancelEditBtn" style="display: none;">Cancelar</button>
+                </form>
             </section>
 
         </main>
