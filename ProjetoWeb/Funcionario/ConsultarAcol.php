@@ -13,37 +13,33 @@ $resultado = $Denuncia->listar();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Estilo/styles2.css">
-  <link rel="stylesheet" href="../Estilo/estilo.css">
+  <link rel="stylesheet" href="../Estilo/consulta.css">
   <title>Document</title>
 </head>
 
 <body>
   <header class="header">
-    <nav>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="../HomeFun.html">Home</a></li>
-        <!-- <li><a href="../ProjetoWeb/Funcionario/ConsultarUsuario.html">Consultar Usuarios</a></li> -->
-        <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li>
-        <!-- <li><a href="imagens.html">Sobre</a></li> -->
-        <!-- <li><a href="Disque\Acolhimento.php">Consultar Acolhimentos</a></li> -->
-
-
-      </ul>
-      <div class="nav__menu__btn" id="menu-btn">
-        <span><i class="ri-menu-line"></i></span>
+    <header class="header">
+    <nav class="navbar">
+      <div class="nav__logo">
+        <a href="#">
+          <img src="../assets/logo-color.png" alt="Logo" class="logo-color" />
+        </a>
       </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="../HomeFun.html">Início</a></li>
+        <li><a href="../Doacao/Doacao.php">Consultar Doações</a></li>
+        <li><a href="../Funcionario/ConsultarAcol.php">Consultar Acolhimentos</a></li>
+        <li><a href="../Meuperfil_funcionario.php">Meu Perfil</a></li>
+        <li><a href="../Login/sair.php">Sair</a></li>
+      </ul>
     </nav>
+  </header>
 
 
     <div class="header__container">
       <div class="header__content">
-        <p></p>
-      </div>
-    </div>
-  </header>
-
-  <script src="https://unpkg.com/scrollreveal"></script>
+         <script src="https://unpkg.com/scrollreveal"></script>
   <script src="main.js"></script>
   <table>
     <caption>Lista de Acolhimentos</caption>
@@ -78,6 +74,11 @@ $resultado = $Denuncia->listar();
     <a class="botao-relatorio" href="../Disque/RelatorioAcolh.php">Gerar Relatório</a>
     <a class="botao-relatorio" href="../HomeFun.html">Voltar</a>
   </div>
+      </div>
+    </div>
+  </header>
+
+ 
 </body>
 
 </html>

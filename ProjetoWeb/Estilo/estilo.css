@@ -6,7 +6,7 @@ h5 {
 }
 
 table {
-      margin: 10px auto; /* centraliza na tela */
+      margin: 50px auto; /* centraliza na tela */
       border-collapse: collapse;
       width: 80%;
       text-align: center;
@@ -45,4 +45,68 @@ table {
       background-color: #0056b3;
     }
 
+    .main-content {
+  padding: 100px 20px 40px; /* Espaço para navbar fixa */
+  display: flex;
+  justify-content: center;
+}
+
+.tabela-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto 30px;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+caption {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.botao-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.botao-relatorio {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.botao-relatorio:hover {
+  background-color: #0056b3;
+}
+
+
+
+   
     
