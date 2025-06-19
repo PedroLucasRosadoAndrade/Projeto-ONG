@@ -66,7 +66,6 @@ $resultado = $Doacao->listar();
 
       <div class="botao-container">
         <a class="botao-relatorio" href="../Doacao/RelatorioDoac.php">Gerar Relatório</a>
-        <a class="botao-relatorio" href="../ConsultarEve/Consultar.html">Voltar</a>
       </div>
     </section>
   </main>

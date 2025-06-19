@@ -14,7 +14,7 @@ $resultado = $Denuncia->listar();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Estilo/consulta.css">
-  <title>Document</title>
+  <title>Consultar Acolhimentos</title>
 </head>
 
 <body>
@@ -73,11 +73,6 @@ $resultado = $Denuncia->listar();
     <?php endwhile; ?>
   </table>
 
-  <div class="botao-container">
-    <a class="botao-relatorio" href="../Disque/RelatorioAcolh.php">Gerar Relatório</a>
-    <a class="botao-relatorio" href="../ConsultarEve/Consultar.html">Voltar</a>
-  </div>
-      </div>
     </div>
     </section>
 </main>

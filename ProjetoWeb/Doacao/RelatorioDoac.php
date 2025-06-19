@@ -31,7 +31,7 @@ $resultado = $Doacao->listar();
   <?php endwhile; ?>
 
   <div class="botao-container">
-    <a class="botao-relatorio" href="../Funcionario/Doacao.php">Voltar</a>
+    <a class="botao-relatorio" href="../Doacao/Doacao.php">Voltar</a>
   </div>
 
 </body>
