@@ -5,14 +5,14 @@ require_once '../Login/Funcionario.php';
 
 $db = (new Database())->getConnection();    
 
-// Verifica se o botão "Entrar como Usuário" foi clicado
+// Verifica se o botão "usuario foi clicado
 if (isset($_POST['login_usuario'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
     $Usuario = new Usuario($db);
     if ($Usuario->verificarLogin($email, $senha)) {
-        // Login de usuário bem-sucedido
+        // Login feito
         header("Location: ../HomeCli.html");
         exit;
     } else {
@@ -20,7 +20,7 @@ if (isset($_POST['login_usuario'])) {
     }
 }
 
-// Verifica se o botão "Entrar como Funcionário" foi clicado
+// Verifica se o botão foi clicado
 if (isset($_POST['login_funcionario'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];

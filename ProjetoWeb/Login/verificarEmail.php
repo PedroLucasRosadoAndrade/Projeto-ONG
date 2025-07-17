@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = (new Database())->getConnection();
     $Usuario = new Usuario($db);
 
-    // Consulta para buscar usuário por e-mail
+    // busca usuário por e-mail
     $query = "SELECT id_usu FROM Usuario WHERE email_usu = :email";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':email', $email);
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         $id = $usuario['id_usu'];
 
-        // Redireciona para o formulário de redefinição com o ID
+        // direciona para formulário de redefinição 
         header("Location: redefinirNovaSenha.php?idCli=" . $id);
         exit;
     } else {

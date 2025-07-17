@@ -56,7 +56,7 @@ $resultado = $Funcionario->buscarPorId();
         </div>
 
         <div class="user-info">
-            Funcionário: Roberval Rogerio Clayton
+            
         </div>
     </header>
 
@@ -64,8 +64,8 @@ $resultado = $Funcionario->buscarPorId();
 
         <main class="content-area profile-main-content">
             <div class="profile-header">
-                <div class="profile-avatar-large">RC</div>
-                <h2>Roberval Rogerio Clayton</h2>
+                <!-- <div class="profile-avatar-large">RC</div> -->
+                <!-- <h2>Roberval Rogerio Clayton</h2> -->
             </div>
 
             <section class="profile-details card">

@@ -19,17 +19,17 @@ $resultado = $Usuario->listar();
 </head>
 
 <body>
-    <header class="header">
+    <!-- <header class="header">
         <nav>
             <ul class="nav__links" id="nav-links">
                 <li><a href="../HomeFun.html">Home</a></li>
                 <!-- <li><a href="../ProjetoWeb/Funcionario/ConsultarUsuario.html">Consultar Usuarios</a></li> -->
-                <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li>
+                <!-- <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li> -->
                 <!-- <li><a href="imagens.html">Sobre</a></li> -->
                 <!-- <li><a href="Disque\Acolhimento.php">Consultar Acolhimentos</a></li> -->
 
 
-            </ul>
+            <!-- </ul>
             <div class="nav__menu__btn" id="menu-btn">
                 <span><i class="ri-menu-line"></i></span>
             </div>
@@ -44,7 +44,7 @@ $resultado = $Usuario->listar();
     </header>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+    <script src="main.js"></script> --> 
 
     <table>
         <caption>Lista de Cadastros</caption>

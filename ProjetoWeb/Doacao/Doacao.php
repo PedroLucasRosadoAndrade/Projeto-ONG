@@ -18,17 +18,17 @@ $resultado = $Doacao->listar();
 </head>
 
 <body>
-    <header class="header">
+    <!-- <header class="header">
         <nav>
             <ul class="nav__links" id="nav-links">
                 <li><a href="../HomeCli.html">Home</a></li>
                 <!-- <li><a href="../ProjetoWeb/Funcionario/ConsultarUsuario.html">Consultar Usuarios</a></li> -->
-                <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li>
+                <!-- <li><a href="ConsultarEve\Consultar.php">Editar eventos</a></li> -->
                 <!-- <li><a href="imagens.html">Sobre</a></li> -->
                 <!-- <li><a href="Disque\Acolhimento.php">Consultar Acolhimentos</a></li> -->
 
 
-            </ul>
+            <!-- </ul>
             <div class="nav__menu__btn" id="menu-btn">
                 <span><i class="ri-menu-line"></i></span>
             </div>
@@ -40,37 +40,39 @@ $resultado = $Doacao->listar();
                 <p></p>
             </div>
 
-            <table >
-                <caption>Lista de Produtos</caption>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Tipo</th>
-                        <th>Nome do Produto</th>
-                        <th>Quantidade</th>
-                        <!-- <th>Atualizações</th> -->
-                    </tr>
-                </thead>
-                <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
-                    <tr>
-                        <td><?= $row['id_doa'] ?></td>
-                        <td><?= $row['tipo_doa'] ?></td>
-                        <td><?= $row['nomeProd_doa'] ?></td>
-                        <td><?= $row['quantidade_doa'] ?></td>
-                        <!-- <td>
-                    <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a>
-                    <a href="../Doacao/ExcluirDoa.php?idDoa=<?= $row['id_doa'] ?>" onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
-                </td> -->
-                    </tr>
-                <?php endwhile; ?>
-            </table>
+
 
         </div>
     </header>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
+    <script src="main.js"></script> -->
 
+
+    <table>
+        <caption>Lista de Produtos</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Nome do Produto</th>
+                <th>Quantidade</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <?php while ($row = $resultado->fetch(PDO::FETCH_ASSOC)): ?>
+            <tr>
+                <td><?= $row['id_doa'] ?></td>
+                <td><?= $row['tipo_doa'] ?></td>
+                <td><?= $row['nomeProd_doa'] ?></td>
+                <td><?= $row['quantidade_doa'] ?></td>
+                <td>
+                    <!-- <a href="AlterarCli.php?idCli=<?= $row['id_doa'] ?>">Editar</a> -->
+                    <a href="../Doacao/ExcluirDoa.php?idDoa=<?= $row['id_doa'] ?>" onclick="return confirm('Deseja Realmente Excluir?')">Excluir</a>
+                </td>
+            </tr>
+        <?php endwhile; ?>
+    </table>
 
 
     <div class="botao-container">

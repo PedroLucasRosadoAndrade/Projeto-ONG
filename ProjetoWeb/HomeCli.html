@@ -4,45 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../ProjetoWeb/Estilo/styles2.css">
-  <link rel="stylesheet" href="../ProjetoWeb/Estilo/estilo.css">
-    
+    <link rel="stylesheet" href="../ProjetoWeb/Estilo/styles2.css">
+    <link rel="stylesheet" href="../ProjetoWeb/Estilo/estilo.css">
+    <link rel="stylesheet" href="../ProjetoWeb/Estilo/home.css" />
+    <script src="../ProjetoWeb/ConsultarEve/script.js" defer></script>
+
     <title>Document</title>
 </head>
 
 <body>
-    <header class="header">
-        <h1>Adoção Animal</h1>
-    </header>
     <nav>
         <ul class="nav__links" id="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="../ProjetoWeb/Doacao/Doacao.html">Realizar Doação</a></li>
-            <li><a href="../ProjetoWeb/ConsultarEve/Consultar.html">Consultar evento</a></li>
+            <!-- <li><a href="../ProjetoWeb/ConsultarEve/Consultar.html">Consultar evento</a></li> -->
             <!-- <li><a href="imagens.html">Sobre</a></li> -->
             <li><a href="../ProjetoWeb/Disque/Acolhimento.html">Disque acolhimento</a></li>
+            <li><a href="../ProjetoWeb/Login/sair.php">Sair</a></li>
 
         </ul>
     </nav>
+    <div class="header__content">
+
+        <div class="wrapper">
+            <div class="calendar-container">
+                <h3>Eventos</h3> <br>
+                <header>
+                    <p class="current-date"></p>
+                    <div class="icons">
+                        <span id="prev" class="material-symbols-rounded"><</span>
+                        <span id="next" class="material-symbols-rounded">></span>
+                    </div>
+                </header>
+                <div class="calendar">
+                    <ul class="weeks">
+                        <li>Dom</li>
+                        <li>Seg</li>
+                        <li>Ter</li>
+                        <li>Qua</li>
+                        <li>Qui</li>
+                        <li>Sex</li>
+                        <li>Sáb</li>
+                    </ul>
+                    <ul class="days"></ul>
+                </div>
+            </div>
+
+            <div class="notes-container">
+                <div class="notes-header">
+                    <h3>Anotações</h3>
+                    <button id="add-note" class="material-symbols-rounded"></button>
+                </div>
+                <div class="note-form hidden">
+                </div>
+                <div class="notes-content">
+                    <div class="selected-date"></div>
+                    <ul class="notes-list"></ul>
+                    <div class="note-form hidden">
+                        <textarea id="note-text" placeholder="Digite sua anotação..."></textarea>
+                        <div class="note-actions">
+                            <button id="save-note">Salvar</button>
+                            <button id="cancel-note">Cancelar</button>
+                            <button id="delete-note" class="danger">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </body>
-<aside>
-    <article class="card">
-        <h3>Post mais visto</h3>
-        <a href="desenvolvimento-web/estrutura-principal-pagina-web.html">
-            <img src="imagens/Tecnologia em analise e desenvolvimento de sistemas tudo sobre a graduacao.jpg"
-                alt="Capa do post">
-        </a>
-        <p>
-            Artigo sobre HTML
-        </p>
-
-    </article>
-    <!-- <article class="card">
-        <h3>Sugundo post</h3>   
-        <img src="imagens/images.jpg" alt="Método Scrum">
-        <p>imagem de como é as reuniões Scrum</p>
-
-    </article> -->
-</aside>
 
 </html>
